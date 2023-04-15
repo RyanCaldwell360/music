@@ -1,0 +1,5 @@
+base_url: "https://api.genius.com"
+lyrics_path: "./data/lyrics"
+artists:
+  - Nf
+  # Add more artists as needed
