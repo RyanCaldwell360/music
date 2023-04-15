@@ -13,9 +13,8 @@ def main():
     print("Running the lyrics fetching script...")
     os.system("python src/fetch_lyrics.py")
 
-    # Add more scripts here as needed, for example:
-    # print("Running the lyrics processing script...")
-    # os.system("python src/lyrics_processing.py")
+    print("Running the lyrics processing script...")
+    os.system("python src/lyrics_processing.py")
 
     # print("Running the embeddings script...")
     # os.system("python src/embeddings.py")

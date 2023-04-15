@@ -2,15 +2,11 @@ import os
 import yaml
 from pathlib import Path
 from lyricsgenius import Genius
+from utils import read_config, read_lyrics_from_files
 
 ###############################
 ### Define Helper Functions ###
 ###############################
-
-def read_config(config_file="./src/config.yaml"):
-    with open(config_file, "r") as file:
-        config = yaml.safe_load(file)
-    return config
 
 def save_lyrics_to_file(artist, title, lyrics, path):
     filename = f"{artist} - {title}.txt"
@@ -29,23 +25,14 @@ def fetch_lyrics_for_artist(artist_name, api_key, path):
         song_lyrics = song.lyrics
         save_lyrics_to_file(artist_name, song_title, song_lyrics, path)
 
-def read_lyrics_from_files(path):
-    lyrics = []
-    lyrics_dir = Path(path)
-
-    for file in lyrics_dir.glob("*.txt"):
-        with open(file, "r", encoding="utf-8") as f:
-            lyrics.append(f.read())
-
-    return lyrics
-
 if __name__ == "__main__":
     ###########################
     ### Read in Config file ###
     ###########################
     config = read_config()
+    print(config)
     artists = config['artists']
-    lyrics_path = config['lyrics_path']
+    lyrics_path = config['lyrics_path']['raw_inputs']
     API_KEY = os.environ["GENIUS_API_KEY"]
 
     #######################################

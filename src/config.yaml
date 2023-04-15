@@ -1,5 +1,7 @@
 base_url: "https://api.genius.com"
-lyrics_path: "./data/lyrics"
+lyrics_path:
+  raw_inputs: "./data/lyrics/raw_lyrics"
+  cleaned_inputs: "./data/lyrics/cleaned_lyrics"
 artists:
   - Nf
   # Add more artists as needed
