@@ -1,4 +1,5 @@
 import yaml
+import torch
 from pathlib import Path
 
 def read_config(config_file="./src/config.yaml"):
@@ -15,3 +16,9 @@ def read_lyrics_from_files(path):
             lyrics.append(f.read())
 
     return lyrics
+
+def extract_embeddings(text, model, tokenizer):
+    inputs = tokenizer(text, return_tensors='pt', truncation=True, padding=True, max_length=512)
+    with torch.no_grad():
+        outputs = model(**inputs)
+    return outputs.last_hidden_state.mean(dim=1).squeeze().tolist()

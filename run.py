@@ -19,8 +19,8 @@ def main():
     print("Running the embeddings script...")
     os.system("python src/embeddings.py")
 
-    # print("Running the similarity search script...")
-    # os.system("python src/similarity_search.py")
+    print("Running the similarity search script...")
+    os.system("python src/similarity_search.py")
 
 if __name__ == "__main__":
     install_requirements()

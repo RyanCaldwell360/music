@@ -5,4 +5,6 @@ lyrics_path:
   embeddings: "./data/embeddings"
 artists:
   - Nf
-  # Add more artists as needed
+
+kNN: 5
+prompt: I'm feeling kinda down lately, but somewhat optimistic. I can see better times coming.

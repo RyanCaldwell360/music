@@ -3,8 +3,8 @@ import csv
 import torch
 import pandas as pd
 from pathlib import Path
-from utils import read_config, read_lyrics_from_files
 from transformers import DistilBertTokenizer, DistilBertModel
+from utils import extract_embeddings, read_config, read_lyrics_from_files
 
 def extract_artist_song_lyrics(path):
     artists = []
@@ -24,12 +24,6 @@ def extract_artist_song_lyrics(path):
             lyrics.append(f.read())
 
     return artists, songs, lyrics
-
-def extract_embeddings(text, model, tokenizer):
-    inputs = tokenizer(text, return_tensors='pt', truncation=True, padding=True, max_length=512)
-    with torch.no_grad():
-        outputs = model(**inputs)
-    return outputs.last_hidden_state.mean(dim=1).squeeze().tolist()
 
 if __name__ == "__main__":
     ######################################
@@ -65,4 +59,3 @@ if __name__ == "__main__":
                            'songs':songs})
     output = pd.concat([output, embeddings], axis=1)
     output.to_csv(output_path / 'embeddings.csv', header=True, index=False)
-    print(output.shape)

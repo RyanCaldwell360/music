@@ -30,7 +30,6 @@ if __name__ == "__main__":
     ### Read in Config file ###
     ###########################
     config = read_config()
-    print(config)
     artists = config['artists']
     lyrics_path = config['lyrics_path']['raw_inputs']
     API_KEY = os.environ["GENIUS_API_KEY"]
