@@ -2,6 +2,7 @@ base_url: "https://api.genius.com"
 lyrics_path:
   raw_inputs: "./data/lyrics/raw_lyrics"
   cleaned_inputs: "./data/lyrics/cleaned_lyrics"
+  embeddings: "./data/embeddings"
 artists:
   - Nf
   # Add more artists as needed

@@ -16,8 +16,8 @@ def main():
     print("Running the lyrics processing script...")
     os.system("python src/lyrics_processing.py")
 
-    # print("Running the embeddings script...")
-    # os.system("python src/embeddings.py")
+    print("Running the embeddings script...")
+    os.system("python src/embeddings.py")
 
     # print("Running the similarity search script...")
     # os.system("python src/similarity_search.py")
