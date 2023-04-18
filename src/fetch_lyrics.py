@@ -18,7 +18,7 @@ def save_lyrics_to_file(artist, title, lyrics, path):
 
 def fetch_lyrics_for_artist(artist_name, api_key, path):
     genius = Genius(api_key)
-    artist = genius.search_artist(artist_name, max_songs=5, sort="popularity", include_features=False)
+    artist = genius.search_artist(artist_name, max_songs=None, per_page=50, sort="popularity", include_features=False)
 
     for song in artist.songs:
         song_title = song.title
