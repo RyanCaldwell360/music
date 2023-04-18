@@ -6,6 +6,7 @@ This repository is a comprehensive solution for analyzing and finding similar so
 
 ## File Structure
 
+```
 music
 ├── src
 │   ├── config.yaml
@@ -26,6 +27,7 @@ music
 ├── README.md
 ├── requirements.txt
 └── run.py
+```
 
 ## Getting Started
 
